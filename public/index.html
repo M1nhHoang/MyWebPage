@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minh Hoàngg</title>
+    <link rel="stylesheet" href="MyWebPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="socket.io/socket.io.js"></script>
+</head>
+<body>
+    <header>
+    <nav>
+        <ul>
+        <li class="nav-item active">
+            <a href="#personal-info">Thông tin cá nhân</a>
+        </li>
+        <li hidden class="nav-item">
+          <a href="#personal-projects">Bài tập về nhà ^^</a>
+        </li>
+        <li class="nav-item">
+          <a href="#chat-box">Chat Box</a>
+        </li>
+        <li class="nav-loginItem">
+          <a href="#login">
+            <ul>
+              <img src="https://minhhoang.info/images/meokhochuhu.png">
+            <span>Đăng Nhập Đê</span>
+            </ul>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="personal-info" class="active">
+      <div class="avatar-section">
+        <img src="https://minhhoang.info/images/meokhochuhu.png" alt="avatar">
+      </div>
+      <div class="description-section">
+        <h2>Minh Hoàng</h2>
+        <p>--- More info ---</p>
+      </div>
+      <div class="social-section">
+        <a href="https://github.com/" target="_blank" class="social-button">
+          <i class="fa fa-github"> GitHub</i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100032999859311" target="_blank" class="social-button">
+          <i class="fa fa-facebook"> Facebook</i>
+        </a>
+        <a href="https://youtube.com/" target="_blank" class="social-button">
+          <i class="fa fa-youtube"> Youtobe</i>
+        </a>
+      </div>
+    </section>
+    <section id="personal-projects">
+    </section>
+    <section id="chat-box">
+      <div id="chat-list">
+        <div id="chat-list-tittle">
+          <h2>Your Name</h2>
+        </div>
+        <div id="chat-list-items">
+          
+        </div>        
+      </div>
+      <div id="chat">
+        <div id="chat-target">
+          <img src="https://minhhoang.info/images/meokhochuhu.png">
+          <div id="person-info">
+            <h2>target-name</h2>
+            <span>last online</span>
+          </div>
+        </div>
+        <div id="chat-messages">
+        </div>
+        <form id="chat-form">
+          <input type="text" id="chat-input" autocomplete="off" placeholder="Type your message here...">
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p></p>
+  </footer>
+  <script src="MyWebPage.js"></script>
+</body>
+</html>

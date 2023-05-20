@@ -1,0 +1,11 @@
+{
+    "databases": {
+        "username": "minhhoa2_sa",
+        "password": "Mhbbnsbtcm123",
+        "host": "localhost",
+        "database": "minhhoa2_dbMyWebPage"
+    },
+    "proxys": {
+        "proxy_mkvn": "sp22-hanoi05.proxy.mkvn.net:8989:125681:RVDCC"
+    }
+}
