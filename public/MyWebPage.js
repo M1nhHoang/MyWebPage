@@ -19,8 +19,38 @@ const sections = document.querySelectorAll('section');
 const personalInfo = document.querySelector('#personal-info');
 const personalProject = document.querySelector('#personal-projects');
 const chatBox = document.querySelector('#chat-box');
+const api = document.querySelector('#API');
 var chatTargetId;
 
+// Lấy endpoint từ URL
+function set_section_endpoint(){
+    const url = window.location.href.split('/');
+    const endpoint = url[url.length - 1];
+    
+    if (url[url.length-1] === '')
+        return
+    
+    // Tìm section tương ứng với endpoint và thêm lớp 'active'
+    sections.forEach(section => {
+        if (`#${section.id}` === endpoint) {
+            section.classList.add('active');
+            section.style.display = 'flex';
+        } else {
+            section.classList.remove('active');
+            section.style.display = 'none';
+        }
+    });
+    
+    // Tìm liên kết nav tương ứng với endpoint và thêm lớp 'active'
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === endpoint) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+set_section_endpoint();
 
 navLinks.forEach(link => {
     link.addEventListener('click', e => {
@@ -68,6 +98,12 @@ navLinks.forEach(link => {
         } 
         else {
             chatBox.style.display = 'none';
+        }
+        if (href === "#API") {
+            api.style.display = 'block';
+        } 
+        else {
+            api.style.display = 'none';
         }
     });
 });
@@ -427,3 +463,17 @@ chatForm.addEventListener('submit', e => {
         socket.emit('client-send-message', {sendId: userid, receiverId: chatTargetId, message: message});
     }
 });
+
+// ===================================================api list============================
+
+var headers = document.getElementsByClassName("api-header");
+    for (var i = 0; i < headers.length; i++) {
+      headers[i].addEventListener("click", function() {
+        var content = this.nextElementSibling;
+        if (content.style.display === "none") {
+          content.style.display = "block";
+        } else {
+          content.style.display = "none";
+        }
+      });
+    }

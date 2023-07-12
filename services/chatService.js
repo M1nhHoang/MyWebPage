@@ -41,10 +41,10 @@ module.exports = {
     // talk (send and receive message)
     talk: async(chat, socket) => {
         socket.on('client-send-message', async (data) => {
-        // if target is chat bot
+            // if target is chat bot
             if (data.receiverId === "SimSimi"){
                 // create answer
-                let answer = await _chatService.chatbot_simsimi(data.message);
+                let answer = await module.exports.chatbot_simsimi(data.message);
                 // send answer
                 socket.emit('server-send-message', JSON.stringify({
                     sender: "SimSimi",

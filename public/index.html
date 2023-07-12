@@ -11,7 +11,7 @@
     <header>
     <nav>
         <ul>
-        <li class="nav-item active">
+        <li class="nav-item ">
             <a href="#personal-info">Thông tin cá nhân</a>
         </li>
         <li hidden class="nav-item">
@@ -19,6 +19,9 @@
         </li>
         <li class="nav-item">
           <a href="#chat-box">Chat Box</a>
+        </li>
+        <li class="nav-item">
+          <a href="#API">API</a>
         </li>
         <li class="nav-loginItem">
           <a href="#login">
@@ -78,6 +81,34 @@
           <button type="submit">Send</button>
         </form>
       </div>
+    </section>
+    <section id="API">
+        <div class="api-container">
+            <div class="api-header">/API/CHESS/<b style="color: black;">GETBESTMOVE</b></div>
+            <div class="api-content" style="display: none;">
+                <p>
+                    <strong>Example Request:</strong>
+                    <code>curl -X POST 'https://minhhoang.info/api/chess/getbestmove' -d 'fen=<b style="color: black;">3r1rk1/5ppp/2p1pn2/p1P5/1p2P3/3Q1P2/PP3P1P/3RR1K1 b</b>&time=<b style="color: black;">100</b>'
+                    </code>
+                </p>
+                <p>
+                    <strong>fen:</strong> 
+                    <code><a href="https://www.chess.com/terms/fen-chess">FEN</a> of board (ex: 3r1rk1/5ppp/2p1pn2/p1P5/1p2P3/3Q1P2/PP3P1P/3RR1K1 b)
+                    </code>
+                </p>
+                <p>
+                    <strong>time:</strong> 
+                    <code>Go move time ( The time limit for a chess engine to calculate a move is set. 1000 equals 1 second, and the maximum limit is 10 seconds, which is equivalent to 10000. ex: 100)
+                    </code>
+                </p>
+                <p>
+                    <strong>Response:</strong>
+                    <code>
+                        {"bestMove":"d8d3"}
+                    </code>
+                </p>
+            </div>
+        </div>
     </section>
   </main>
   <footer>
