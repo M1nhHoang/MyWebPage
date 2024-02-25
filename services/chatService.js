@@ -102,8 +102,8 @@ module.exports = {
         let option = {
             url: 'https://api.simsimi.vn/v2/simtalk',
             method: 'POST',
-            form: payload,
-            proxy: proxy
+            form: payload
+            // proxy: proxy
         }
         // request post
         return new Promise((resolve, reject) => {

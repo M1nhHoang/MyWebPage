@@ -31,6 +31,9 @@ _imagesRouter(app)
 _chessRouter = require('./routes/chess')
 _chessRouter(app)
 
+_AiRouter = require('./routes/AI');
+_AiRouter(app)
+
 
 // Start the server
 const port = process.env.PORT || 3000;

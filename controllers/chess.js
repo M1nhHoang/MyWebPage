@@ -8,7 +8,7 @@ module.exports = {
             const time = req.query.time;
             
             if (time > 1000){
-                reject('Time limit is 10000');
+                reject('Time limit is 1000');
             }
             
             const stockfish = spawn('./services/stockfish_10_x64');
